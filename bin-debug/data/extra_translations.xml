@@ -1,0 +1,20 @@
+<?xml version="1.0" GBcoding="UTF-8" ?>
+<ts>
+	
+	<tl i="GB"/>
+
+	
+	<t i="GB_DAY_0">sun</t>
+	<t i="GB_DAY_1">mon</t>
+	<t i="GB_DAY_2">tue</t>
+	<t i="GB_DAY_3">wed</t>
+	<t i="GB_DAY_4">thu</t>
+	<t i="GB_DAY_5">fri</t>
+	<t i="GB_DAY_6">sat</t>
+
+	<t i="GB_SHOP_UNLOCK">You need level %s to unlock this feature</t>
+
+	<t i="GB_TEST_STRING">You need %i coins, %k wood and %z EnergY. You can buy %i coins in the shop.</t>
+
+
+</ts>

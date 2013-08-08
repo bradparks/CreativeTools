@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ts>
+	<tl i="RU"/>
+	<tl i="EN"/>
+
+	<t i="RU_DAY_0">вс</t>
+	<t i="RU_DAY_1">пн</t>
+	<t i="RU_DAY_2">вт</t>
+	<t i="RU_DAY_3">ср</t>
+	<t i="RU_DAY_4">чт</t>
+	<t i="RU_DAY_5">пт</t>
+	<t i="RU_DAY_6">сб</t>
+
+	<t i="EN_DAY_0">sun</t>
+	<t i="EN_DAY_1">mon</t>
+	<t i="EN_DAY_2">tue</t>
+	<t i="EN_DAY_3">wed</t>
+	<t i="EN_DAY_4">thu</t>
+	<t i="EN_DAY_5">fri</t>
+	<t i="EN_DAY_6">sat</t>
+
+	<t i="EN_TAMA_NAME">Yuko</t>
+	<t i="RU_TAMA_NAME">Юко</t>
+
+	<t i="RU_SHOP_UNLOCK">Нужен %level%-й уровень</t>
+	<t i="EN_SHOP_UNLOCK">You need level %level% to unlock this feature</t>
+
+	<t i="RU_TEST_STRING">Нужено %coin_amount% монет, %wood_amount% дерева и %energy_amount% энергии. Купить %coin_amount% монет можно в магазине.</t>
+	<t i="EN_TEST_STRING">You need %coin_amount% coins, %wood_amount% wood and %energy_amount% energy. You can buy %coin_amount% coins in the shop.</t>
+
+	<t i="RU_GREETING">Приветствую %name%, ты %greeting%. Следуй %place%</t>
+	<t i="EN_GREETING">Hello %name%, you are %greeting%. Please go to %place%</t>
+
+	<t i="RU_ASTRING">This is a test string, this is my saved variable %var%. Twice %var%</t>
+	<t i="EN_ASTRING">This is a test string in a different language, this is my saved variable %var%. Twice %var%</t>
+
+
+
+</ts>

@@ -1,54 +1,39 @@
 package com.creative.screen
 {
 	import flash.display.Sprite;
-	import flash.events.Event;
 	
-	public class Screen extends Sprite
+	public class AScreen extends Sprite
 	{
 		private var screenListenerArray:Vector.<ScreenListenerObject>;
+		
 		public var managerRef:ScreenManager;
 		
-		public function Screen():void
+		public var screenWidth:int;
+		public var screenHeight:int;
+		
+		public function AScreen():void
 		{
 			screenListenerArray = new Vector.<ScreenListenerObject>();
 			
-			if (stage) init();
-			else addEventListener(Event.ADDED_TO_STAGE, init)
-			
 		}
 		
-		protected function goToScreen(screenID:uint):void
+		protected function goToScreen(screenID:uint, useHistory:Boolean = true):void
 		{
-			managerRef.setScreen(screenID);
+			managerRef.gotoScreen(screenID, useHistory);
 		}
 		
-		
-		private function init(e:Event = null):void
+		protected function goBack():void
 		{
-			if (e) removeEventListener(Event.ADDED_TO_STAGE, init);
-			
-			addEventListener(Event.REMOVED_FROM_STAGE, onRemoved);
-			
-			addScreenEventListener(stage, Event.RESIZE, resize);
-			
+			managerRef.goBack();
 		}
 		
 		
-		private function onRemoved(event:Event):void
+		public function init():void
 		{
-			removeEventListener(Event.REMOVED_FROM_STAGE, onRemoved);
-			
-			for (var i:int = 0; i < screenListenerArray.length; i++) 
-			{
-				var o:Object = screenListenerArray[i].object;
-				var t:String = screenListenerArray[i].type;
-				var l:Function = screenListenerArray[i].listener;
-				o.removeEventListener(t, l);
-			}
-			
-			screenListenerArray = null;
+						
 			
 		}
+		
 		
 		public function deactivate():void
 		{
@@ -72,7 +57,7 @@ package com.creative.screen
 			}
 		}
 		
-		public function resize(e:Event = null):void
+		public function resize():void
 		{
 			throw new Error("This method needs to be overridden");
 		}
@@ -87,7 +72,6 @@ package com.creative.screen
 			screenListenerObject.listener = listener;
 			
 			screenListenerArray.push(screenListenerObject);
-			
 		}
 	}
 }

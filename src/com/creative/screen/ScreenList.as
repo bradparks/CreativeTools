@@ -2,7 +2,7 @@ package com.creative.screen
 {
 	internal class ScreenList
 	{
-		private var _screenClassArray:Vector.<Class> = new Vector.<Class>();;
+		private var _screenClassArray:Vector.<Class> = new Vector.<Class>();
 		
 		public function ScreenList()
 		{

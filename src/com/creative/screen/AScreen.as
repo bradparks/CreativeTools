@@ -59,7 +59,7 @@ package com.creative.screen
 		
 		public function resize():void
 		{
-			throw new Error("This method needs to be overridden");
+			
 		}
 		
 		protected function addScreenEventListener(object:Object, type:String, listener:Function):void

@@ -15,7 +15,7 @@ package com.creative.screen
 		
 		public function get screenClassArray():Vector.<Class>
 		{
-			return screenClassArray;
+			return _screenClassArray;
 		}
 	}
 }

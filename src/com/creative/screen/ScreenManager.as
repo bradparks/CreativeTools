@@ -82,6 +82,9 @@ package com.creative.screen
 		
 		private function cleanup():void
 		{
+			if (currentScreen == null)
+				return;
+			
 			currentScreen.deactivate();
 			_targetHolder.removeChild(currentScreen);
 			currentScreen = null;

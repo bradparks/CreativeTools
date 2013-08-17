@@ -151,6 +151,11 @@ package com.creative.text.translation
 			registeredTextFieldArray = new Vector.<RegisteredTextField>();
 		}
 		
+		public static function getTestString(testString):String
+		{
+			return testString;
+		}
+		
 		
 		// SETTERS AND GETTERS
 		public static function get currentLaguage():String
@@ -175,6 +180,8 @@ package com.creative.text.translation
 			
 			
 		}
+		
+		
 
 	}
 }

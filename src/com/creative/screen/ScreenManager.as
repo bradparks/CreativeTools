@@ -106,7 +106,7 @@ package com.creative.screen
 			gotoScreen(targetScreenID, false);
 		}
 		
-		internal function gotoScreen(screenID:int, writeHistory:Boolean = true):void
+		public function gotoScreen(screenID:int, writeHistory:Boolean = true):void
 		{
 			cleanup();
 			

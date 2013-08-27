@@ -8,9 +8,10 @@ package com.creative.screen
 		{
 		}
 		
-		public function addScreenClass(screenClass:Class):void
+		public function addScreenClass(...screenClass):void
 		{
-			_screenClassArray.push(screenClass);
+			for (var i:int = 0; i < screenClass.length; i++)
+			_screenClassArray.push(screenClass[i]);
 		}
 		
 		public function get screenClassArray():Vector.<Class>

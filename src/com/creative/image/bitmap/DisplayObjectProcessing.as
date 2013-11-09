@@ -228,7 +228,11 @@ package com.creative.image.bitmap
 			for (var i:int = 0; i < movieClip.totalFrames; i++) 
 			{
 				movieClip.gotoAndStop(i);
-				var bd:BitmapData = new BitmapData(mcWidth * movieClip.scaleX, mcHeight * movieClip.scaleY, transparent, bgFillColor);
+				
+				var frameWidth:Number = mcWidth * movieClip.scaleX;
+				var frameHeight:Number = mcHeight * movieClip.scaleY;
+				
+				var bd:BitmapData = new BitmapData(frameWidth, frameHeight, transparent, bgFillColor);
 				bd.draw(movieClip, m, null, null, null, true);
 				
 				bdArray.push(bd);
@@ -237,13 +241,6 @@ package com.creative.image.bitmap
 			return bdArray;
 		}
 		
-		public static function cropBitmap(b:Bitmap, usePixels:Boolean, width:uint, height:uint, cropAlign:String = BitmapCropScale.NO_SCALE, pixelSnapping:String = "auto", smoothing:Boolean = true):Bitmap
-		{
-			//TODO: finish this method
-			
-			var cropppedBitmap:Bitmap = new Bitmap();
-			
-			return cropppedBitmap;
-		}
+		
 	}
 }

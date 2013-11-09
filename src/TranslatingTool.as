@@ -8,6 +8,7 @@ package
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
@@ -18,7 +19,7 @@ package
 	import flash.text.TextField;
 	import flash.text.TextFieldAutoSize;
 
-	[SWF(width="1000", height="600", backgroundColor="#ffffff")]
+	[SWF(width="500", height="600", backgroundColor="#ffffff")]
 	
 	public class TranslatingTool extends Sprite
 	{
@@ -33,23 +34,33 @@ package
 		
 		private function bitmapTest():void
 		{
+			// set bg
+			
+			var s:Sprite = new Sprite();
+			s.graphics.beginFill(0xFF0000);
+			s.graphics.drawRect(0, 0, stage.stageWidth, stage.stageHeight);
+			s.graphics.endFill();
+			addChild(s);
+			
+			
+			// clip
+			
+			var v:MovieClip = new VikingAttack();
+			v.x += v.width;
+			
 			BitmapClipPlayer.init();
 			
-			for (var i:int = 0; i < 60; i++) 
-			{
-				var v:VikingAttack = new VikingAttack();
-				var a:Vector.<BitmapData> = DisplayObjectProcessing.getMovieClipFrames(v);
+			var a:Vector.<BitmapData> = DisplayObjectProcessing.getMovieClipFrames(v, 0, true, false, 0x0000FF);
 				
-				var bc:BitmapClip = new BitmapClip(a);
-				
-				bc.x = bc.width * i;
-				
-				BitmapClipPlayer.registerClip(bc);
-				
-				addChild(bc);
-				
-			}
+			var bc:BitmapClip = new BitmapClip(a);
+			addChild(bc);
+			
+			BitmapClipPlayer.registerClip(bc);
+			
+			
 			BitmapClipPlayer.play();
+			
+			
 		}
 		
 		private function test():void

@@ -1,5 +1,7 @@
 package com.creative.image.bitmap
 {
+	import com.creative.image.bitmap.events.BitmapClipEvent;
+	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Sprite;
@@ -11,8 +13,8 @@ package com.creative.image.bitmap
 		private var b:Bitmap;
 		private var currentCount:uint = 0;
 		
-		public var paused:Boolean = false;
-		
+		private var _paused:Boolean = false;
+				
 		public function BitmapClip(bitmapDataArray:Vector.<BitmapData> = null)
 		{
 			
@@ -24,7 +26,7 @@ package com.creative.image.bitmap
 				clip = bitmapDataArray;
 			
 		}
-		
+
 		internal function changeImage(bitmapData:BitmapData):void
 		{
 			b.bitmapData = bitmapData;
@@ -57,6 +59,22 @@ package com.creative.image.bitmap
 			_clip = value;
 			
 			changeImage(_clip[0]);
+			dispatchEvent(new BitmapClipEvent(BitmapClipEvent.CLIP_CHANGE));
+		}
+		
+		public function get paused():Boolean
+		{
+			return _paused;
+		}
+		
+		public function set paused(value:Boolean):void
+		{
+			_paused = value;
+			
+			if (value)
+				dispatchEvent(new BitmapClipEvent(BitmapClipEvent.CLIP_PAUSED));
+			else
+				dispatchEvent(new BitmapClipEvent(BitmapClipEvent.CLIP_UNPAUSED));
 		}
 
 	}

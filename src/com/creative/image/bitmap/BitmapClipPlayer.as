@@ -18,6 +18,7 @@ package com.creative.image.bitmap
 		
 		public static function unregisterClip(clip:BitmapClip):void
 		{
+			removeClipFromActive(clip);
 			
 			for (var i:int = 0; i < bitmapClipArray.length; i++) 
 			{

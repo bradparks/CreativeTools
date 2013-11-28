@@ -46,6 +46,7 @@ package com.creative.image.bitmap
 			}
 			
 			bitmapClipArray.push(clip);
+			addClipToActive(clip);
 			
 			clip.addEventListener(BitmapClipEvent.CLIP_CHANGE, onClipChanged);
 			clip.addEventListener(BitmapClipEvent.CLIP_PAUSED, onClipPaused);

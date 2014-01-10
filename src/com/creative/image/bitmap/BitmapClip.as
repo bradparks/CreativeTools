@@ -11,7 +11,7 @@ package com.creative.image.bitmap
 		private var _clip:Vector.<BitmapData>;
 
 		private var b:Bitmap;
-		private var currentCount:uint = 0;
+		public var offset:uint = 0;
 		
 		private var _paused:Boolean = false;
 				
@@ -34,8 +34,8 @@ package com.creative.image.bitmap
 		
 		internal function nextFrame():void
 		{
-			currentCount++;
-			b.bitmapData = clip[currentCount % clip.length];
+			offset++;
+			b.bitmapData = clip[offset % clip.length];
 		}
 		
 		public function registerToPlayer():void
